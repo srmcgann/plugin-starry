@@ -78,6 +78,7 @@ kiwi.plugin('starryPlugin', function(kiwi, log) {
         starClick = true;
         if(starControlsDiv.style.display === "block"){
           starControlsDiv.style.display = "none";
+          document.getElementById('picker').jscolor.hide()
         }else{
           starControlsDiv.style.display = "block";
           document.getElementById('picker').jscolor.show();
