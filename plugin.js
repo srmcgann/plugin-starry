@@ -86,23 +86,4 @@ kiwi.plugin('starryPlugin', function(kiwi, log) {
       }
     }
   });
-
-  function paint(div){
-    div.style.background = 'url('+dataURL+') 0% 50%';
-    div.style.backgroundSize = '100% 100%';
-  }
-  
-  /*
-  function redrawDivs(){
-    let divs=document.getElementsByTagName("div");
-    for(let i = 0; i < divs.length; i++){
-      if(joined){
-        if(divs[i].className === "kiwi-messagelist") paint(divs[i]);
-      }else{
-        if(divs[i].className.indexOf("kiwi-startup-common-section kiwi-startup-common-section-connection") !== -1 ||
-           divs[i].className.indexOf("kiwi-startup-common-section kiwi-startup-common-section-info") !== -1) paint(divs[i]);
-      }
-    }
-  }
-  */
 });
