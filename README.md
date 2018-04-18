@@ -1,9 +1,10 @@
 # KiwiIRC - Starry Plugin
 
 This plugin adds an animated starfield to KiwiIRC's UI. 
+Works best with dark themes.
 
 
-    "starry":{ "color": "#a1a" },
+    "starry":{ "color": "#2400a8" },
     "plugins": [
         {"name": "starryPlugin", "url": "./static/plugins/plugin-starry/dist/main.js"} 
     ]
