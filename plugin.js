@@ -1,4 +1,5 @@
 kiwi.plugin('starryPlugin', function(kiwi, log) {
+  let starryColor = kiwi.state.setting('starry.color') || "#aa9";
   let c = document.createElement("canvas");
   c.style.position = "absolute";
   c.style.top = 0;
@@ -29,7 +30,7 @@ kiwi.plugin('starryPlugin', function(kiwi, log) {
     x.globalAlpha = .3;
     x.fillStyle = "#000";
     x.fillRect(0,0,c.width,c.height);
-    x.fillStyle = x.strokeStyle = typeof starColor !== "undefined" ? starColor : kiwi.state.setting('starry.color');
+    x.fillStyle = x.strokeStyle = typeof starColor !== "undefined" ? starColor : starryColor;
     for(w=c.width/2,j=1000;j--;x.beginPath(x.fill())){
       x.globalAlpha = .5 - Math.pow(Z,6) * .5;
       for(i=6;i--;x.lineTo(w+(200-j*j%400+S(p=2.51*i+t/2.5+j))/Z,c.height/2+(199-j*j*6%399+C(p))/Z));
@@ -49,7 +50,7 @@ kiwi.plugin('starryPlugin', function(kiwi, log) {
     starControlsDiv.style.position = "absolute";
     starControlsDiv.style.right = "40px";
     starControlsDiv.style.bottom = "80px";
-    starControlsDiv.style.background = kiwi.state.setting('starry.color');
+    starControlsDiv.style.background = starryColor;
     starControlsDiv.style.padding = "10px";
     starControlsDiv.style.border = "1px solid #aaa";
     starControlsDiv.style.borderRadius = "6px";
@@ -58,7 +59,7 @@ kiwi.plugin('starryPlugin', function(kiwi, log) {
     starControlsDiv.style.display = "none";
     starControlsDiv.style.zIndex = "100";
     starControlsDiv.innerHTML = "<button onclick='document.getElementsByClassName(\"starControlsDiv\")[0].style.display = \"none\";document.getElementById(\"picker\").jscolor.hide();' style='position:absolute;right:5px;margin-top:-5px;border-radius:5px;background:#f88;'>X</button>";
-    starControlsDiv.innerHTML += `<div class="color"><input value="`+kiwi.state.setting('starry.color')+`" class="jscolor {width:169, padding:0, shadow:false, borderWidth:0, backgroundColor:'transparent', insetColor:'#fff', onFineChange:'setColor(this)'}" id="picker"></div>`;
+    starControlsDiv.innerHTML += `<div class="color"><input value="`+starryColor+`" class="jscolor {width:169, padding:0, shadow:false, borderWidth:0, backgroundColor:'transparent', insetColor:'#fff', onFineChange:'setColor(this)'}" id="picker"></div>`;
     starControlsDiv.innerHTML += `<div style="margin-top:110px">Star Speed:<input type="range" id="starSpeed" value="55"></div>`;
     document.body.appendChild(starControlsDiv);
     const starTool = document.createElement('i');
