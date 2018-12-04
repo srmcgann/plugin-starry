@@ -22,6 +22,8 @@ kiwi.plugin('starryPlugin', function(kiwi, log) {
     }
     if(typeof document.getElementsByClassName("kiwi-sidebar")[0] !== "undefined"){
       document.getElementsByClassName("kiwi-statebrowser-scrollarea")[0].style.background = "rgba(0,0,0,.25)";
+      document.getElementsByClassName("kiwi-workspace")[0].style.background = "rgba(0,0,0,.25)";
+      document.getElementsByClassName("kiwi-messagelist")[0].style.background = "rgba(0,0,0,0)";
       document.getElementsByClassName("kiwi-statebrowser")[0].style.background = "rgba(0,0,0,0)";
       document.getElementsByClassName("kiwi-sidebar")[0].style.background = "rgba(0,0,0,0)";
       document.getElementsByClassName("kiwi-workspace-background")[0].style.background = "rgba(0,0,0,0)";
